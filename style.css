@@ -7,7 +7,10 @@
   text-decoration: none;
   scroll-behavior: smooth;
 }
-
+.all{
+  max-width: 70%;
+  margin: 0 auto;
+}
 /* Custom Scroll Bar CSS */
 ::-webkit-scrollbar {
     width: 10px;
@@ -46,8 +49,10 @@ nav .navbar{
   align-items: center;
   margin: auto;
 }
-nav .navbar .logo {
-  height: 80;
+.navbar .logo img{
+  max-width: 100%;
+    width: 120px;
+    height: auto;
 }
 nav.sticky .navbar .logo img{
   background-color: #F0F8FF;
@@ -256,97 +261,76 @@ section .button button:hover{
   background-color: #fff;
   color: #4070f4;
 }
-/* team css */
-.team .container{
-  display:flex;
-  justify-content:space-around;
+/* gallery css */
+.gallery .products-content{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(350px, auto));
+  grid-gap: 2rem;
+  margin-top: 5rem;
+  text-align: center;
+  cursor: pointer;
 }
-.team .card{
-  align-content: center;
+
+.col{
   position: relative;
-  width: 600px;
-  height: 350px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  transition: 0.5s;
 }
-.card .circles{
+.col img{
+  max-width: 100%;
+  width: 550px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.layer{
+  background:transparent;
+  height: 100%;
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  overflow: hidden;
+  border-radius: 12px;
+  transition: all .40s;
 }
-.card .circle::before{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #06328b;
-  clip-path: circle(125px at center);
-  transition: 0.5s;
+
+.layer:hover{
+  background:linear-gradient(rgba(0,0,0,0.5) 0%, #191919);
 }
-.card img{
+
+.layer h3{
   position: absolute;
-  top: 58%;
+  width: 100%;
+  font-size: 25px;
+  font-weight: 500;
+  color:#F0F8FF;
+  bottom: 0;
   left: 50%;
-  transform: translate(-50%,-50%);
-  height: 150px;
-  pointer-events: none;
-  transition: 0.5s;
-}
-.card:hover img{
-  left: 80%;
-  height: 400px;
-}
-.card .content{
-  position: relative;
-  width: 50%;
-  left: 20%;
-  padding: 20px 20px 20px 20px;
-  transition: 0.5s;
+  transform: translateX(-50%);
   opacity: 0;
-  visibility: hidden;
+  transition: all .40s;
 }
-.card.card:hover .content{
-  left: 0;
-  opacity: 2;
-  visibility: visible;
+
+.layer:hover h3{
+  bottom: 52%;
+  opacity: 1;
 }
-.card .content h2{
+
+.layer h5{
+  position: absolute;
+  width: 100%;
+  font-size: 17px;
+  font-weight: 500;
   color:#e38968;
-  text-transform: uppercase;
-  font-size: 2em;
-  line-height: 1em;
-  margin-bottom: 5px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: all .40s;
 }
-.card .content h3{
-  color: #e38968;
-  text-transform: uppercase;
-  font-size: 1em;
-  margin-bottom: 10px;
-  font-weight: 700;
-}
-.card .content p{
-  color: #F0F8FF;
-}
-.card .content a{
-  position: relative;
-  color: #06328b;
-  padding: 10px 20px;
-  border-radius: 10px;
-  background: #e38968;
-  color: #111;
-  margin-top: 10px;
-  display: inline-block;
-  text-decoration: none;
-  font-weight: 700;
-  transition: 0.5s;
+
+.layer:hover h5{
+  bottom: 49%;
+  opacity: 1;
 }
 
  /* My Skills CSS */
@@ -453,21 +437,18 @@ section .button button:hover{
 }
 /* client css */
 .client .container{
-    display: flex;
-    overflow-x: scroll;
-    padding: 24px;
-    width: 460px;
-    height: 500px;
-    scroll-snap-type: x mandatory;
-    scroll-padding: 24px;
-    border-radius: 8px;
-    gap: 12px;
-    margin: 2rem auto;
+  display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(450px, auto));
+    grid-gap: 2rem;
+    align-items: center;
+    margin-top: 5rem;
+    text-align: center;
+    cursor: pointer;
 }
 
 .client .container .item{
     flex: 0 0 100%;
-    padding: 24px;
+    padding: 10px;
     border-radius: 8px;
     scroll-snap-type: start;
     background-image: linear-gradient(25deg, #0f1b33 30%, #ff6532 100%);
@@ -578,7 +559,6 @@ footer .text span a:hover{
     margin: 20px 0;
     width: calc(100% / 2 - 20px);
   }
-  
 }
 @media (max-width: 900px) {
   .about .left img{
@@ -642,8 +622,13 @@ footer .text span a:hover{
     justify-content: center;
     align-items: center;
     width: 100%;
+    display: block;
   }
   .services .boxes .box{
+    margin: 20px 0;
+    width: 100%;
+  }
+  .contact .container{
     margin: 20px 0;
     width: 100%;
   }
@@ -659,6 +644,10 @@ footer .text span a:hover{
   .team .container{
     display: block;
   }
+  .gallery .products-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px, auto));
+    grid-gap: 2rem;}
 }
 
 @media (max-width: 500px){
