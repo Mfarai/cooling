@@ -153,7 +153,7 @@ nav.sticky .menu-btn{
 .home .button{
   margin: 14px 0;
 }
-.home .button button{
+.home .button a{
   outline: none;
   padding: 8px 16px;
   border-radius: 6px;
@@ -165,7 +165,7 @@ nav.sticky .menu-btn{
   border: 2px solid transparent;
   transition: all 0.4s ease;
 }
-.home .button button:hover{
+.home .button a:hover{
   background-color: #06328b;
   color: #ff6532;
 }
@@ -244,7 +244,7 @@ section  .topic{
 section .button{
   margin: 16px 0;
 }
-section .button button{
+section .button a{
   outline: none;
   padding: 8px 16px;
   border-radius: 4px;
@@ -256,7 +256,7 @@ section .button button{
   cursor: pointer;
   transition: all 0.4s ease;
 }
-section .button button:hover{
+section .button a:hover{
   border-color: #06328b;
   background-color: #fff;
   color: #4070f4;
